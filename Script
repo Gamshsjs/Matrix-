@@ -1,0 +1,87 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window1 = Rayfield:CreateWindow({
+   Name = "Matrix hub",
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by Matrix",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "matrix shit"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Key system",
+      Subtitle = "Please enter the key",
+      Note = "the key is key22",
+      FileName = "matrix key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"key22"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local mainTab = Window1:CreateTab("main", 4483362458) -- Title, Image
+
+local Button = mainTab:CreateButton({
+   Name = "infinite yield",
+   Callback = function()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button = mainTab:CreateButton({
+   Name = "Nameless admin",
+   Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/nobutttttttaka/YOOOOOOOOOO/main/lua"))()        
+   end,
+})
+
+local Slider1 = mainTab:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+   end,
+})
+
+local Slider2 = mainTab:CreateSlider({
+   Name = "JumpPower",
+   Range = {0, 100},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+   end,
+})
+
+local feTab = Window1:CreateTab("Fe", 4483362458) -- Title, Image
+
+local Button = feTab:CreateButton({
+   Name = "Fe sonic",
+   Callback = function()
+   loadstring(game:HttpGet(('https://pastefy.ga/k6p0dOXK/raw'),true))()
+   end,
+})
+
+local Button = feTab:CreateButton({
+   Name = "Hat Hub",
+   Callback = function()
+            loadstring(game:HttpGet("https://textbin.net/raw/rvohv1nvuf"))();
+   end,
+})
+
+local creditsTab = Window1:CreateTab("Credits", 4483362458) -- Title, Image
+
+local Paragraph = creditsTab:CreateParagraph({Title = "credits go to", Content = "matrix hub discord owners"})
